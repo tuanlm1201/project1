@@ -1,0 +1,49 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: sans-serif;
+    color: #333;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: rgb(240, 238, 238);
+}
+.main .title{
+    text-align: center;
+}
+.main .title h1{
+    font-size: 30px;
+    font-style: bold;
+}
+.main .image{
+    text-align: center;
+    background-color: white;
+    margin: 0px 10px;
+}
+.main .image .sub{
+    line-height: 50px;
+}
+.main .info{
+    margin: 0px auto;
+    padding: 0px 50px;
+    width: 550px;
+}
+.main .info .heading-info{
+    text-align: center;
+    line-height: 100px;
+}
+.main .info ul li{
+    margin: 20px;
+}
+.main .info .sub-info{
+    margin: 20px 0px 20px 0px;
+    font-style: italic;
+}
+.main .tribute-link{
+    margin: 0px auto;
+}
+.main .tribute-link a{
+    color: blue;
+}
