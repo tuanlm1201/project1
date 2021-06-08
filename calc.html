@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,32 +10,58 @@
     <link rel="stylesheet" href="css/calc.css">
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
 </head>
+
 <body>
     <div class="container">
         <div class="calc">
-            <div class="formScreen">2</div>
-            <div class="outputScreen">3</div>
+            <div class="formScreen"></div>
+            <div class="outputScreen">0</div>
             <div class="calc-form">
-                <button id="clear" value="AC">AC</button>
-                <button id="divide" value="/">/</button>
-                <button id="multiply" value="x">x</button>
-                <button id="seven" value="7">7</button>
-                <button id="eight" value="8">8</button>
-                <button id="nine" value="9">9</button>
-                <button id="subtract" value="-">-</button>
-                <button id="four" value="4">4</button>
-                <button id="five" value="5">5</button>
-                <button id="six" value="6">6</button>
-                <button id="add" value="+">+</button>
-                <button id="one" value="1">1</button>
-                <button id="two" value="2">2</button>
-                <button id="three" value="3">3</button>
-                <button id="zero" value="0">0</button>
-                <button id="decimal" value=".">.</button>
-                <button id="equal" value="=">=</button>
+                <button class="item clear" value="AC">AC</button>
+                <button class="item divide" value="/">/</button>
+                <button class="item multiply" value="*">*</button>
+                <button class="item seven" value="7">7</button>
+                <button class="item eight" value="8">8</button>
+                <button class="item nine" value="9">9</button>
+                <button class="item subtract" value="-">-</button>
+                <button class="item four" value="4">4</button>
+                <button class="item five" value="5">5</button>
+                <button class="item six" value="6">6</button>
+                <button class="item add" value="+">+</button>
+                <button class="item one" value="1">1</button>
+                <button class="item two" value="2">2</button>
+                <button class="item three" value="3">3</button>
+                <button class="item zero" value="0">0</button>
+                <button class="item decimal" value=".">.</button>
+                <button class="item equal" value="=">=</button>
             </div>
         </div>
         <div class="footer-calc"></div>
     </div>
+    <script type="text/javascript">
+        var input = document.querySelector('.formScreen');
+        var inputEqual = document.querySelector('.outputScreen');
+        var items = Array.from(document.querySelectorAll('.item'));
+        console.log(items)
+        items.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                if (input.innerHTML == '0') {
+                    input.innerHTML = ''
+                }
+                if (btn.innerHTML == '*') {
+                    inputEqual.innerHTML = 'NAN';
+                }
+                if (btn.innerHTML == 'AC') {
+                    input.innerHTML = '0';
+                }else if(btn.innerHTML == '='){
+                    inputEqual.innerHTML = eval(input.innerHTML);
+                }
+                else{ 
+                    input.innerHTML+=btn.innerHTML;
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>
